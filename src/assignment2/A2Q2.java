@@ -47,18 +47,16 @@ public class A2Q2 {
         new Thing(kw, 1, 8);
 
         //Move to end hurdles
-
-        while (true) {
-            //Check if it can move
-            //yes, move, no, turn over hurdle
-            //end if can pick up
-            //Check if bot can move
-            //while (!ay.canPickThing()) {
-                //Check if front is clear
-                while (ay.frontIsClear()) {
-                    //Move if clear
+while (!ay.canPickThing()){
+           
+       //when front is clear one moves
+           if (ay.frontIsClear()){
                     ay.move();
-                //}
+                }
+  
+                //bot approaches hurdle it jumps
+                if (!ay.frontIsClear()){    
+              
                 //Jump over hurdle
                 ay.turnLeft();
                 ay.move();
@@ -71,11 +69,18 @@ public class A2Q2 {
                 ay.turnLeft();
                 ay.move();
                 ay.turnLeft();
-            }
-            //Stop once the bot is on the bot
-            break;
-        }
-
-
+           }
+                
+}      
     }
-}
+        }
+    
+
+
+                
+          
+            
+        
+
+
+
