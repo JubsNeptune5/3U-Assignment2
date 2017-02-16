@@ -24,7 +24,7 @@ public class A2Q3 {
         City kw = new City();
 
         // Create Bot
-        Robot ay = new Robot(kw, -6, 10, Direction.WEST);
+        Robot ay = new Robot(kw, 6, 10, Direction.WEST);
         //when it doesn't facwe east turn to face east
         while (ay.getDirection() != Direction.EAST) {
             ay.turnLeft();
