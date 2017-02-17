@@ -11,7 +11,7 @@ import becker.robots.Wall;
  * and open the template in the editor.
  */
 /**
- *
+ *to jump over hurdles and stop on top of a thing
  * @author laveh2107
  */
 public class A2Q2 {
