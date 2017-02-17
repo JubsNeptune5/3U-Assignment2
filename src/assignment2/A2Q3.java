@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package assignment2;
@@ -7,12 +8,10 @@ package assignment2;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
-import becker.robots.Thing;
-import becker.robots.Wall;
 
 /**
- *
- * @author laveh2107
+ *move robot from any point to 0,0
+ * @author hunterlaverty
  */
 public class A2Q3 {
 
@@ -22,48 +21,50 @@ public class A2Q3 {
     public static void main(String[] args) {
         // Create City
         City kw = new City();
-
-        // Create Bot
-        Robot ay = new Robot(kw, 6, 10, Direction.WEST);
-        //when it doesn't facwe east turn to face east
-        while (ay.getDirection() != Direction.EAST) {
-            ay.turnLeft();
-        }
-        //Turn robot north
-        //Check Street 
-        //move up if it is in negative avenue
-        if (ay.getStreet() < 0) {
-            ay.turnLeft();
-            ay.turnLeft();
-            ay.turnLeft();
-            while (ay.getStreet() < 0) {
-                ay.move();
+        
+        //Create Robot
+        Robot ay = new Robot(kw, 45, 124, Direction.NORTH);
+        
+        //Check if robots on avenue 0
+        while (ay.getAvenue() >0){
+            //move to be in right direction
+            while(ay.getDirection()!=Direction.WEST){
+                //turn till facing west
+                ay.turnLeft();   
             }
+            //move bot to get to 0
+            ay.move();
         }
-        //move down if it is in positive avenue
-        if (ay.getStreet() > 0) {
-            ay.turnLeft();
-            while (ay.getStreet() > 0) {
-                ay.move();
+        //Check if robots on avenue 0
+        while (ay.getAvenue()<0){
+            //move to the right direction
+            while(ay.getDirection()!=Direction.EAST){
+                //turn to face direction
+                ay.turnLeft();
             }
+            //move robot to get to 0
+            ay.move();
         }
-        //move up if it is in negative avenue
-        if (ay.getAvenue() < 0) {
-            while (ay.getAvenue() < 0) {
-                ay.move();
+        //Check the Street if its greater than 0
+        while (ay.getStreet()>0){
+            //Move to the right direction to move to the origin
+            while(ay.getDirection() !=Direction.NORTH){
+                //turn to face north direction
+                ay.turnLeft();
             }
+            //move bot to 0
+            ay.move();
         }
-        //move down if it is in positive avenue
-        if (ay.getAvenue() > 0) {
-            ay.turnLeft();
-            ay.turnLeft();
-            ay.turnLeft();
-            while (ay.getAvenue() > 0) {
-                ay.move();
+        //Check the stret is lees than zero
+        while (ay.getStreet()<0){
+            //rotate to the south direction to move to the origin
+            while(ay.getDirection() !=Direction.SOUTH){
+                //turn to face south
+                ay.turnLeft();
             }
+            //move bot to 0
+            ay.move();
         }
     }
-    //Keep moving north until on street 0
-    //Turn Robot west
-    //keep moving until on avenue 0
+    
 }
