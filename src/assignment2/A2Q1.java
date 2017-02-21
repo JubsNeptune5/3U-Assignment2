@@ -10,7 +10,7 @@ import becker.robots.Robot;
 import becker.robots.Thing;
 
 /**
- *
+ *Stop after it only picks up 7 things
  * @author laveh2107
  */
 public class A2Q1 {
