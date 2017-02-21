@@ -152,20 +152,20 @@ public class Challenge {
                     //bot will pick it up
                     re.pickThing();
 
-                    //turn top face east, down drive way
+                    //when the bot can pick up thing, the driveway starts turn top face east, down drive way
                     while (re.getDirection() != Direction.EAST) {
                         //turn
                         re.turnLeft();
                     }
-                    //if bot can pick thing up while turning, it does s
+                    //the bot will move util it reaches the end of drive way
                     while (re.frontIsClear()) {
                         re.move();
                         while (re.canPickThing()) {
-                            //bot will pick it up
+                            //bot will pick it up snow when heading through drive way
                             re.pickThing();
                         }
                     }
-                    //when the front isn't clear
+                    //when the bot hits end of driveway
                     while (!re.frontIsClear()) {
                         //turn till bot faces south
                         while (re.getDirection() != Direction.SOUTH) {
@@ -178,19 +178,19 @@ public class Challenge {
                                 re.pickThing();
                             }
                         }
-                        //when bot tuirns and the front is clear 
+                        //when bot turns and the thr front is clear, move down the driveway
                         while (re.frontIsClear()) {
                             //move
                             re.move();
                         }
-                        //when the bot turns and front isnt clear
+                        //when the bot hits the end of driveway
                         while (!re.frontIsClear()) {
-                            //when the bot doesn't face west
+                            //turn bot to exit the driveway
                             while (re.getDirection() != Direction.WEST) {
                                 //turn
                                 re.turnLeft();
 
-                                //if bot can pick thing up while turning, it does s
+                                //if bot can pick thing up while turning, it does so
                                 while (re.canPickThing()) {
                                     //bot will pick it up
                                     re.pickThing();
