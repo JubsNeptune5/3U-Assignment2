@@ -10,7 +10,8 @@ import becker.robots.Robot;
 import becker.robots.Thing;
 
 /**
- *Stop after it only picks up 7 things
+ * Stop after it only picks up 7 things
+ *
  * @author laveh2107
  */
 public class A2Q1 {
@@ -48,7 +49,7 @@ public class A2Q1 {
                 ay.pickThing();
                 //move
                 ay.move();
-             }
+            }
             break;
         }
         //move util bot can't pick thing up
@@ -56,7 +57,7 @@ public class A2Q1 {
             //move
             ay.move();
         }
-        
+
 
 
 
